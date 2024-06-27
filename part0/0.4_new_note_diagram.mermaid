@@ -3,6 +3,7 @@ sequenceDiagram
     participant server
 
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    activate server
     Note left of server: The server save new note data
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
