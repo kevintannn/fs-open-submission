@@ -1,11 +1,11 @@
-import { useState } from "react";
+// import { useState } from "react";
 
 /* eslint-disable react/prop-types */
 const App = () => {
-  const [counter, setCounter] = useState(0);
-  const [allClicks, setAllClicks] = useState([]);
-  const [top, setTop] = useState(40);
-  const [left, setLeft] = useState(40);
+  // const [counter, setCounter] = useState(0);
+  // const [allClicks, setAllClicks] = useState([]);
+  // const [top, setTop] = useState(40);
+  // const [left, setLeft] = useState(40);
 
   const course = {
     name: "Half Stack application development",
@@ -25,21 +25,21 @@ const App = () => {
     ],
   };
 
-  const handleClick = () => {
-    setCounter(counter + 1);
-    setTop(Math.floor(Math.random() * (500 - 40 + 1) + 40));
-    setLeft(Math.floor(Math.random() * (1000 - 40 + 1) + 40));
-  };
+  // const handleClick = () => {
+  //   setCounter(counter + 1);
+  //   setTop(Math.floor(Math.random() * (500 - 40 + 1) + 40));
+  //   setLeft(Math.floor(Math.random() * (1000 - 40 + 1) + 40));
+  // };
 
-  const handleLeftClick = () => {
-    handleClick();
-    setAllClicks(allClicks.concat("L"));
-  };
+  // const handleLeftClick = () => {
+  //   handleClick();
+  //   setAllClicks(allClicks.concat("L"));
+  // };
 
-  const handleRightClick = () => {
-    handleClick();
-    setAllClicks(allClicks.concat("R"));
-  };
+  // const handleRightClick = () => {
+  //   handleClick();
+  //   setAllClicks(allClicks.concat("R"));
+  // };
 
   return (
     <div
@@ -47,7 +47,13 @@ const App = () => {
         position: "relative",
       }}
     >
-      <button
+      <Header course={course.name} />
+
+      <Content parts={course.parts} />
+
+      <Total parts={course.parts} />
+
+      {/* <button
         onClick={handleClick}
         style={{
           position: "absolute",
@@ -69,13 +75,7 @@ const App = () => {
         }}
       >
         {allClicks.join("")}
-      </p>
-
-      <Header course={course.name} />
-
-      <Content parts={course.parts} />
-
-      <Total parts={course.parts} />
+      </p> */}
     </div>
   );
 };
